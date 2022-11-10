@@ -1,4 +1,4 @@
-<h1 align="center">BlockScout</h1>
+<h1 align="center">Scroll's BlockScout Fork</h1>
 <p align="center">Blockchain Explorer for inspecting and analyzing EVM Chains.</p>
 <div align="center">
 
