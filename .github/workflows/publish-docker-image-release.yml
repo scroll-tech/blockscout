@@ -39,7 +39,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: blockscout/blockscout
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/blockscout
 
       - name: Build & Push Docker image
         uses: docker/build-push-action@v3
@@ -49,7 +49,7 @@ jobs:
           push: true
           cache-from: type=registry,ref=blockscout/blockscout:buildcache
           cache-to: type=registry,ref=blockscout/blockscout:buildcache,mode=max
-          tags: blockscout/blockscout:latest, blockscout/blockscout:${{ env.RELEASE_VERSION }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/blockscout:latest, ${{ secrets.DOCKERHUB_USERNAME }}/blockscout:${{ env.RELEASE_VERSION }}
           platforms: |
             linux/arm64
             linux/amd64
@@ -64,7 +64,7 @@ jobs:
             MIXPANEL_URL=
             MIXPANEL_TOKEN=
             AMPLITUDE_URL=
-            AMPLITUDE_API_KEY=
+            AMPLITUDE_API_KEY= ${{ secrets.AMPLITUDE_API_KEY }}
             CACHE_ADDRESS_WITH_BALANCES_UPDATE_INTERVAL=
             BLOCKSCOUT_VERSION=v${{ env.RELEASE_VERSION }}-beta
             RELEASE_VERSION=${{ env.RELEASE_VERSION }}

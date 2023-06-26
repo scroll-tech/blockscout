@@ -4,10 +4,11 @@ import { init as amplitudeInit, track as amplitudeTrack } from '@amplitude/analy
 // @ts-ignore
 const mixpanelToken = process.env.MIXPANEL_TOKEN
 // @ts-ignore
-const amplitudeApiKey = process.env.AMPLITUDE_API_KEY
+// const amplitudeApiKey = process.env.AMPLITUDE_API_KEY
 let initialized = false
 export let mixpanelInitialized = false
 export let amplitudeInitialized = false
+
 
 export function init () {
   // @ts-ignore
@@ -24,6 +25,8 @@ export function init () {
     mixpanelInitialized = true
   }
 
+  // @ts-ignore
+  const amplitudeApiKey = document.getElementById("amplitude_api_key")?.innerText
   if (amplitudeApiKey) {
     if (amplitudeUrl) {
       amplitudeInit(amplitudeApiKey, undefined, { serverUrl: amplitudeUrl })

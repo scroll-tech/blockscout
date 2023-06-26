@@ -168,7 +168,7 @@ const appJs =
       new webpack.DefinePlugin({
         'process.env.MIXPANEL_TOKEN': JSON.stringify(process.env.MIXPANEL_TOKEN),
         'process.env.MIXPANEL_URL': JSON.stringify(process.env.MIXPANEL_URL),
-        'process.env.AMPLITUDE_API_KEY': JSON.stringify(process.env.AMPLITUDE_API_KEY),
+        // 'process.env.AMPLITUDE_API_KEY': JSON.stringify(AMPLITUDE_API_KEY),
         'process.env.AMPLITUDE_URL': JSON.stringify(process.env.AMPLITUDE_URL)
       }),
       new webpack.ProvidePlugin({
