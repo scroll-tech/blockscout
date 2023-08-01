@@ -183,6 +183,7 @@
             </svg>
           </button>
         <% end %>
+        <div id="amplitude_api_key" style="display: none; position:absolute;"><%= Application.get_env(:block_scout_web, :amplitude_api_key) %></div>
         <%= render BlockScoutWeb.LayoutView, "_account_menu_item.html", conn: @conn, current_user: @current_user %>
       </ul>
       <%= render BlockScoutWeb.LayoutView, "_search.html", conn: @conn, id: "main-search-autocomplete", additional_classes: ["mobile-search-hide"] %>
